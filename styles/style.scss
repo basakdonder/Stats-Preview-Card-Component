@@ -1,0 +1,128 @@
+//font-family: 'Inter', sans-serif;
+//font-family: 'Lexend Deca', sans-serif;
+
+@import "variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $VeryDarkBlue;
+  font-family: "Inter", sans-serif;
+  color: $White;
+}
+
+.card_container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+
+  .card {
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: $DarkDesaturatedBlue;
+    overflow: hidden;
+
+    &_text {
+      width: 35%;
+      margin: 60px;
+
+      span {
+        color: $SoftViolet;
+      }
+
+      h1 {
+        font-weight: 700;
+      }
+
+      p {
+        color: $WhiteParagraph;
+        line-height: 2;
+        font-weight: 400;
+      }
+
+      .stat_wrapper {
+        display: flex;
+        margin-top: 60px;
+
+        &_items {
+          margin-right: 70px;
+          line-height: 1.5;
+
+          .stat {
+            font-size: 23px;
+            font-weight: 700;
+          }
+
+          .stat_header {
+            color: $WhiteStatHeading;
+            font-family: "Lexend Deca", sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    &_img {
+      display: flex;
+      position: relative;
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: hsla(277, 75%, 40%, 0.5);
+      }
+
+      #main_img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .card_container {
+    .card {
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+
+      &_text {
+        margin-top: 10px;
+        width: auto;
+        text-align: center;
+
+        .stat_wrapper {
+          display: flex;
+          flex-direction: column;
+          margin-top: 0;
+
+          &_items {
+            margin-right: 0;
+            margin-top: 30px;
+          }
+        }
+      }
+
+      &_img {
+        order: -1;
+
+        #main_img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
